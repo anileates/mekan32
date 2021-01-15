@@ -3,7 +3,7 @@ var apiSecenekleri = {
     sunucu: "https://anilerdemates1821012019.herokuapp.com",
     apiYolu: '/api/mekanlar/'
 }
-
+/** Heroku için test yorum */
 var istekSecenekleri;
 var footer = "Anıl Erdem Ateş 2020";
 
