@@ -5,8 +5,13 @@ var ctrlDigerleri=require('../controllers/digerleri');
 
 router.get('/', ctrlMekanlar.anaSayfa);
 router.get('/mekan/:mekanid', ctrlMekanlar.mekanBilgisi);
-router.get('/mekan/:mekanid/yorum/yeni', ctrlMekanlar.yorumEkle);
-router.post('/mekan/:mekanid/yorum/yeni', ctrlMekanlar.yorumumuEkle);
+// router.get(, ); // yorum ekle sayfasını çağırır
+// router.post('/mekan/:mekanid/yorum/yeni', ); // yorum ekle sayfasında yorum ekle butonuna basılınca bu çalışır
+
+router
+.route('/mekan/:mekanid/yorum/yeni')
+.get(ctrlMekanlar.yorumEkle)
+.post(ctrlMekanlar.yorumumuEkle)
 
 
 router.get('/hakkinda', ctrlDigerleri.hakkinda);

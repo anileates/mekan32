@@ -1,5 +1,6 @@
 var mongoose = require('mongoose')
 var Mekan = mongoose.model('mekan')
+
 const cevapOlustur = function(res, status, content) {
     res
         .status(status)
@@ -88,7 +89,7 @@ const mekanGetir = function(req, res) {
                     cevapOlustur(res, 404, { "durum": "mekanid bulunamadı" });
                     return;
                 } else if (hata) {
-                    cevapOlustur(res, 404, hata);
+                    cevapOlustur(res, 400, hata);
                 }
                 cevapOlustur(res, 200, mekan)
             })
